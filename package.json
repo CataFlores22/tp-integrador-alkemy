@@ -1,0 +1,26 @@
+{
+  "name": "tp-integrador-alkemy",
+  "version": "1.0.0",
+  "description": "Aplicación web con Node.js y Express - Proyecto integrador módulos 6, 7 y 8 de Alkemy",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "backend"
+  ],
+  "author": "Catalina Flores",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

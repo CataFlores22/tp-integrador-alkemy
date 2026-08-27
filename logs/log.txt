@@ -1,0 +1,4 @@
+[27-08-2026 3:46:49 p. m.] Ruta visitada: /
+[27-08-2026 3:47:05 p. m.] Ruta visitada: /status
+[27-08-2026 3:48:11 p. m.] Ruta visitada: /
+[27-08-2026 4:03:24 p. m.] Ruta visitada: /
