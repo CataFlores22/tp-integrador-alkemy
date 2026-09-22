@@ -13,6 +13,10 @@ const Usuario = sequelize.define('Usuario', {
     edad: {
         type: DataTypes.INTEGER,
     },
+        contraseña: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 }, {
     tableName: 'usuarios',
     timestamps: false,

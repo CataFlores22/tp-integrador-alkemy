@@ -8,6 +8,7 @@ const { engine } = require('express-handlebars'); // Motor de plantillas
 
 // Importamos las rutas y el middleware que definimos en otros archivos
 const mainRoutes = require('./routes/mainRoutes');
+const authRoutes = require('./routes/authRoutes');
 const logger = require('./middlewares/logger');
 
 //agregamos sequelize
@@ -32,9 +33,10 @@ app.use(logger);
 
 // Conectamos las rutas al servidor, montadas desde la URL base "/"
 app.use('/', mainRoutes);
+app.use('/', authRoutes);
 
 // Sincronizamos el modelo con la base de datos
-sequelize.sync()
+sequelize.sync({ alter: true})
   .then(() => console.log('Modelos sincronizados con la base de datos'))
   .catch((err) => console.error('Error al sincronizar modelos:', err));
 

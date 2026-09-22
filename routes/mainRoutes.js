@@ -5,6 +5,7 @@ const router = express.Router();
 // Importamos las funciones del controlador
 const { getHome, getStatus, getUsuariosORM, getUsuarioConPedidos, crearPedido, eliminarPedido, crearUsuarioConPedido } = require('../controllers/mainController');
 
+const verificarToken = require('../middlewares/verificarToken');
 // Cuando alguien haga GET a / (raíz), se ejecuta getHome
 router.get('/', getHome);
 
@@ -18,10 +19,10 @@ router.get('/usuarios', getUsuariosORM);
 router.get('/usuarios/:id/pedidos', getUsuarioConPedidos);
 
 // Cuando alguien haga POST a /pedidos, se ejecuta crearPedido
-router.post('/pedidos', crearPedido);
+router.post('/pedidos', verificarToken, crearPedido);
 
 // Cuando alguien haga DELETE a /pedidos/:id, se ejecuta eliminarPedido
-router.delete('/pedidos/:id', eliminarPedido);
+router.delete('/pedidos/:id', verificarToken, eliminarPedido);
 
 // Cuando alguien haga POST a /usuarios-con-pedido, se ejecuta crearUsuarioConPedido
 router.post('/usuarios-con-pedido', crearUsuarioConPedido);
